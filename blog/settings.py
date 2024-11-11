@@ -41,8 +41,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
 ROOT_URLCONF = 'blog.urls'
 
+# Template for displaying on web pages
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
