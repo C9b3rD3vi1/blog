@@ -33,8 +33,7 @@ class EditProfileForm(forms.Form):
         username = self.cleaned_data['username']
         if username != self.original_username:
             if User.objects.filter(username=username).exists():
-                raise forms.ValidationError(
-                    'A user with that username already exists.')
+                raise forms.ValidationError('A user with that username already exists.')
         return username
 
 
