@@ -57,6 +57,8 @@ def signup(request):
     return render(request, 'signup.html', {'form': form})
 
 
+
+
 def log_in(request):
     """
     This function handles the login process for users. It first checks if the user is already logged in,
