@@ -43,10 +43,12 @@ class PostView(DetailView):
 
 def signup(request):
     """
-    This function handles the signup process for new users. It first checks if the user is already logged in,
-    in which case it redirects them to the home page. If the request method is POST, it processes the
-    form data, creates a new user with the provided email and password, and logs them in if the data is
-    correct. If the user is not authenticated, an error message is displayed
+    This function handles the signup process for new users.
+    It first checks if the user is already logged in, in which case it redirects them to the home page.
+    If the request method is POST,
+    it processes the form data, creates a new user with the provided email and password, 
+    and logs them in if the data is correct. 
+    If the user is not authenticated, an error message is displayed
     """
     # If the user is already logged in, we redirect them to the home page
     if request.user.is_authenticated:
