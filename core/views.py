@@ -61,7 +61,7 @@ def signup(request):
             # display a nice message when a new user is registered
             messages.success(request, "Congratulations, you are now a registered user!")
             return redirect('home')
-    else:
+    else: # return signUpForm
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
 
