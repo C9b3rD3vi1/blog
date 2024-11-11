@@ -162,6 +162,8 @@ def edit_profile(request):
     return render(request, "users/edit_profile.html", {'form': form})
 
 
+
+
 # Handles Create, Delete and Update Posts section
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
