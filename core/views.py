@@ -90,8 +90,23 @@ def profile(request, username):
     return render(request, 'users/profile.html', {'profile': profile, 'user': user})
 
 
+
 @login_required
 def edit_profile(request):
+    """
+    This function handles the editing of a user's profile. It checks if the request method is POST,
+    in which case it processes the form data. If the form is valid, it updates the user's profile
+    information and redirects to the user's profile page. If the request method is not POST, it
+    renders the edit profile template with an empty form.
+
+    Parameters:
+    request (HttpRequest): The request object containing the user's input data.
+
+    Returns:
+    HttpResponseRedirect or render: If the request method is POST and the form is valid, it returns
+    a redirect to the user's profile page. If the request method is not POST, it returns a render
+    of the edit profile template with an empty form.
+    """
     if request.method == "POST":
         form = EditProfileForm(request.user.username, request.POST, request.FILES)
         if form.is_valid():
