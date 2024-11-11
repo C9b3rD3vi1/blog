@@ -41,6 +41,8 @@ class PostView(DetailView):
         return context
 
 
+
+
 def signup(request):
     """
     This function handles the signup process for new users.
