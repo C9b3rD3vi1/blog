@@ -80,9 +80,25 @@ def log_in(request):
     return render(request, 'login.html', {'form': form})
 
 
+
 def log_out(request):
     logout(request)
     return redirect(reverse('login'))
+<<<<<<< Tabnine <<<<<<<
+def log_out(request):#+
+    """#+
+    This function handles the logout process for the user. It first logs the user out using the#+
+    `logout` function from the `django.contrib.auth` module. Then, it redirects the user to the login page.#+
+#+
+    Parameters:#+
+    request (HttpRequest): The request object containing the user's input data.#+
+#+
+    Returns:#+
+    HttpResponseRedirect: A redirect to the login page after the user has been logged out.#+
+    """#+
+    logout(request)#+
+    return redirect(reverse('login'))#+
+>>>>>>> Tabnine >>>>>>># {"conversationId":"a88b7982-8ffa-4b9c-83e0-7c53706ee4ae","source":"instruct"}
 
 
 @login_required
