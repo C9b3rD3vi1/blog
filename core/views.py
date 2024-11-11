@@ -61,6 +61,7 @@ def log_in(request):
     # If the user is already logged in, we redirect them to the home page
     if request.user.is_authenticated:
         return redirect('core:home')
+    # If the request method is POST, we process the form data
     if request.method == "POST":
         form = LoginForm(request.POST)
         if form.is_valid():
