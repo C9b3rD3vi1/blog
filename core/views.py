@@ -58,6 +58,7 @@ def signup(request):
 
 
 def log_in(request):
+    # If the user is already logged in, we redirect them to the home page
     if request.user.is_authenticated:
         return redirect('core:home')
     if request.method == "POST":
