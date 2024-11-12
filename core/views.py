@@ -236,6 +236,18 @@ class PostView(DetailView):
         return context
 
     def post(self, request, *args, **kwargs):
+        """
+        Handles POST requests for a specific post detail view.
+        It processes the comment form data, creates a new comment, and updates the context for rendering.
+
+        Parameters:
+        request (HttpRequest): The request object containing the user's input data.
+        *args: Variable length argument list.
+        **kwargs: Arbitrary keyword arguments.
+
+        Returns:
+        HttpResponse: The rendered template with updated context containing the new comment.
+        """
         form = CommentForm(request.POST)
         self.object = self.get_object()
         context = super().get_context_data(**kwargs)
